@@ -1,8 +1,8 @@
 include console.inc
 
-COMMENT *N DD ? ;число без знака
-Записать в регистр CL:    
-б) сумму цифр десятичной записи числа N;
+COMMENT *N DD ? ;С‡РёСЃР»Рѕ Р±РµР· Р·РЅР°РєР°
+Р—Р°РїРёСЃР°С‚СЊ РІ СЂРµРіРёСЃС‚СЂ CL:    
+Р±) СЃСѓРјРјСѓ С†РёС„СЂ РґРµСЃСЏС‚РёС‡РЅРѕР№ Р·Р°РїРёСЃРё С‡РёСЃР»Р° N;
 *
 
 .data
@@ -11,8 +11,8 @@ N dd ?
 S dw ?
 
 
-st1 db 'Введите число N: ', 0 
-st2 db 'Значение CL: ', 0
+st1 db 'Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ N: ', 0 
+st2 db 'Р—РЅР°С‡РµРЅРёРµ CL: ', 0
 
 
 .code
@@ -32,12 +32,12 @@ Start:
    add S, dx
    
    M: mov cx, ax ;cx:=ax
-   div bl  ;al-частное ah-остаток
-   cmp cx, 0 ;сравним cx и 0
-   je L ;если =; то переходим на метку L
-   mov ch, ah ;сохраним ah в регистре ch
-   movzx ax, al ;convert al на ax
-   movzx dx, ch ;convert ch на dx 
+   div bl  ;al-С‡Р°СЃС‚РЅРѕРµ ah-РѕСЃС‚Р°С‚РѕРє
+   cmp cx, 0 ;СЃСЂР°РІРЅРёРј cx Рё 0
+   je L ;РµСЃР»Рё =; С‚Рѕ РїРµСЂРµС…РѕРґРёРј РЅР° РјРµС‚РєСѓ L
+   mov ch, ah ;СЃРѕС…СЂР°РЅРёРј ah РІ СЂРµРіРёСЃС‚СЂРµ ch
+   movzx ax, al ;convert al РЅР° ax
+   movzx dx, ch ;convert ch РЅР° dx 
    add S, dx ;S:=S+dx
    jmp M
 
