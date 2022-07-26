@@ -1,7 +1,7 @@
 include console.inc
 
 COMMENT *
-   Заготовка программы
+   Р—Р°РіРѕС‚РѕРІРєР° РїСЂРѕРіСЂР°РјРјС‹
 *
 
 .data
@@ -20,9 +20,9 @@ Start:
     ClrScr
     newline
 
-    mov EAX, 0  ; модификатор адреса
-    mov EBX, 0  ; модификатор адреса
-    mov AL, 1   ; al:=i ( пусть i=1)
+    mov EAX, 0  ; РјРѕРґРёС„РёРєР°С‚РѕСЂ Р°РґСЂРµСЃР°
+    mov EBX, 0  ; РјРѕРґРёС„РёРєР°С‚РѕСЂ Р°РґСЂРµСЃР°
+    mov AL, 1   ; al:=i ( РїСѓСЃС‚СЊ i=1)
     mov BL, Q[EAX] ; BL:=Q[i] bl:=3
     mov Q[EBX], AL ; Q[0]:=i Q[3]:=1
 
