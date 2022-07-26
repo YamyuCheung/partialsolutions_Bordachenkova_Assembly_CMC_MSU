@@ -1,8 +1,8 @@
 include console.inc
 
 COMMENT *  N=30
-Z DB N DUP (?) ; Z[0..N–1], числа со знаком
-б) поменять знаки у всех элементов массива Z с чётными индексами.
+Z DB N DUP (?) ; Z[0..NвЂ“1], С‡РёСЃР»Р° СЃРѕ Р·РЅР°РєРѕРј
+Р±) РїРѕРјРµРЅСЏС‚СЊ Р·РЅР°РєРё Сѓ РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° Z СЃ С‡С‘С‚РЅС‹РјРё РёРЅРґРµРєСЃР°РјРё.
 *
 
 .data
@@ -11,8 +11,8 @@ n EQU 6
 Z DB n DUP (?)
 
 
-st1 db 'Введите массив: ', 0
-st2 db 'Вывод массива: ', 0
+st1 db 'Р’РІРµРґРёС‚Рµ РјР°СЃСЃРёРІ: ', 0
+st2 db 'Р’С‹РІРѕРґ РјР°СЃСЃРёРІР°: ', 0
 
 
 .code
@@ -28,19 +28,19 @@ Start:
     mov ECX, n 
 
 MAS:
-    inint Z[type Z * EAX] ;ввод массива  
-    mov ESI, EAX ;сохраним EAX
+    inint Z[type Z * EAX] ;РІРІРѕРґ РјР°СЃСЃРёРІР°  
+    mov ESI, EAX ;СЃРѕС…СЂР°РЅРёРј EAX
     mov EDI, EAX ;EDI:=EAX
     xor EDX, EDX ;EDX:=0
-    div EBX ;разделим на 2
-    cmp EDX, 0 ;сравним с 0
-    je cont ;переходим на метку cont
+    div EBX ;СЂР°Р·РґРµР»РёРј РЅР° 2
+    cmp EDX, 0 ;СЃСЂР°РІРЅРёРј СЃ 0
+    je cont ;РїРµСЂРµС…РѕРґРёРј РЅР° РјРµС‚РєСѓ cont
     mov EAX, ESI
     inc EAX  ;EAX:=EAX+1
     loop MAS
-    jmp FIN ;переходим на метку FIN, чтобы выводить массив
-cont: mov EAX, ESI ;восстановим EAX
-      NEG Z[type Z * EAX] ;negate элемент
+    jmp FIN ;РїРµСЂРµС…РѕРґРёРј РЅР° РјРµС‚РєСѓ FIN, С‡С‚РѕР±С‹ РІС‹РІРѕРґРёС‚СЊ РјР°СЃСЃРёРІ
+cont: mov EAX, ESI ;РІРѕСЃСЃС‚Р°РЅРѕРІРёРј EAX
+      NEG Z[type Z * EAX] ;negate СЌР»РµРјРµРЅС‚
       inc EAX  
       loop MAS
       
