@@ -1,7 +1,7 @@
 include console.inc
 
 COMMENT *
-   Заготовка программы
+   Р—Р°РіРѕС‚РѕРІРєР° РїСЂРѕРіСЂР°РјРјС‹
 *
 
 .data
@@ -10,8 +10,8 @@ n EQU 10
 B DD n DUP (?)
 
 
-st1 db 'Введите массив: ', 0
-st2 db 'Последний элемент массива: ', 0
+st1 db 'Р’РІРµРґРёС‚Рµ РјР°СЃСЃРёРІ: ', 0
+st2 db 'РџРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР°: ', 0
 
 
 .code
@@ -23,13 +23,13 @@ Start:
     mov ECX, n 
 
 MAS:
-    inint B[type B * EAX] ;ввод массива  
+    inint B[type B * EAX] ;РІРІРѕРґ РјР°СЃСЃРёРІР°  
     inc EAX  ;EAX:=EAX+1
     loop MAS 
 
 
     outstr offset st2
-    outint B[size B-type B] ;Вывести 
+    outint B[size B-type B] ;Р’С‹РІРµСЃС‚Рё 
 
 
     newline
